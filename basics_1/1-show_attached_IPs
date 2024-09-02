@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays the active IPv4 addresses on the current system using ifconfig
+# Displays all active IPv4 IP addresses on the machine using ifconfig and sed.
 
-# Extract and display active IPv4 addresses
-ifconfig | grep 'inet ' | awk '{print $2}' | cut -d ':' -f 2
+# Use ifconfig to extract IPv4 addresses
+ifconfig | sed -n 's/.*inet \([0-9.]\+\).*/\1/p'
