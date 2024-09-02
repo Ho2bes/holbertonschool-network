@@ -2,4 +2,4 @@
 # This script displays all active IPv4 IP addresses on the machine.
 
 # Extract and display all active IPv4 addresses using the ip command
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v
